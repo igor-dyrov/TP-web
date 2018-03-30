@@ -1,0 +1,7 @@
+{% load static %}
+<span>
+  <a class="btn btn-info askme-btn" style="margin-left: 5px" href={% url 'registration' %}>
+      <img src="{% static "img/user.png"%}" width="22px" height="22px"> Sign Up</a>
+  <a class="btn btn-info askme-btn" href={% url 'login' %}>
+      <img src="{% static "img/login.png" %}" width="22px" height="22px">Sign In</a>
+</span>

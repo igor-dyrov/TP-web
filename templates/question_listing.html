@@ -1,0 +1,37 @@
+{% load static %}
+{% for question in questions %}
+    <div class="row askme-main-content-question-block" id = "{{ question.id }}">
+      <div class="col-lg-4">
+        <img src="{% static "img/avatar.png" %}" width="150" height="100" class="askme-main-content-avatar">
+
+        <p style="margin-right: 40px" align="center" class="askme-main-content-username">
+            <a class="font-weight-bold askme-main-content-question-block-username"href="#">{{ question.author }}</a></p>
+
+        <div class="row input-group">
+            <div class="col-lg-6"  style="margin-left: 65px">
+              <a type="button" href = "{% url 'question_like' question.id id_%}"
+                      class="btn btn-secondary askme-main-content-question-block-input-btn2">⯅
+              </a>
+              <input type="text" class="form-control askme-main-content-question-block-input" placeholder={{ question.rating }} readonly>
+              <a type="button" href = "{% url 'question_dislike' question.id id_%}"
+                      class="btn btn-secondary askme-main-content-question-block-input-btn2">⯆
+              </a>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <h1 class="askme-main-content-arcticle-title">{{ question.title }}</h1>
+        <p class="font-italic askme-main-content-question-block-article">
+            {{ question.text }}
+        </p>
+        <ul class="hr">
+          <li><a href={% url 'answer' question.id %}><u>answers ({{ question.num_of_ans }})</u></a> </li>
+          <li class="font-weight-bold askme-main-content-arcticle-title">Tags: </li>
+          <li><a href="#">Chrome</a></li>
+          <li><a href="#">C++</a></li>
+          <li><a href="#">MySQL</a></li>
+          <li><a href="#">CLion</a></li>
+        </ul>
+      </div>
+</div>
+{% endfor %}

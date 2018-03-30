@@ -1,0 +1,35 @@
+    {%  extends 'base.html' %}
+
+    {% block header %}
+        <div class="row">
+          <div class="col-lg-6">
+            <h1><u>Tag: C++</u></h1>
+          </div>
+        </div>
+    {% endblock %}
+
+    {% block left-content %}
+        {% include 'question_listing.html' %}
+    {% endblock %}
+
+    {% block bottom %}
+        <div class="bottom">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+          <button type="button" class="btn btn-secondary">1</button>
+          <button type="button" class="btn btn-secondary">2</button>
+          <button type="button" class="btn btn-secondary">3</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+          <button type="button" class="btn btn-secondary">4</button>
+          <button type="button" class="btn btn-secondary">5</button>
+          <button type="button" class="btn btn-secondary">6</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Third group">
+          <button type="button" class="btn btn-secondary">7</button>
+          <button type="button" class="btn btn-secondary">8</button>
+          <button type="button" class="btn btn-secondary">9</button>
+        </div>
+       </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1><u>Registration</u></h1>
+    <p class="askme-login-warning askme-registration-offset">Sorry, this email is already registered!</p>
+{% endblock %}
+
+{% block left-content %}
+    <div class="row askme-registration">
+      <div class="col-lg-12">
+        <label class="askme-login-label1">Login: <input class="askme-registration-login" style="margin-left: 125px"></label>
+        <label class="askme-login-label1">Email: <input class="askme-registration-login" style="margin-left: 125px"></label>
+        <label class="askme-login-label1">NickName: <input class="askme-registration-login" style="margin-left: 90px"></label>
+        <label class="askme-login-label1">Password: <input class="askme-registration-login" style="margin-left: 95px"></label>
+        <label class="askme-login-label1">Repeat Password: <input class="askme-registration-login" style="margin-left: 40px"></label>
+        <label class="askme-login-label1">Avatar: <input class="askme-registration-login" style="margin-left: 120px; width: 155px"></label>
+        <button class="btn btn-info askme-btn" style=" height: 35px">Choose</button>
+        <div class="row">
+          <button class="btn btn-info askme-btn askme-registration-btn">Register!</button>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+{% endblock %}

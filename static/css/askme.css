@@ -1,0 +1,280 @@
+body {
+  padding-top: 5rem;
+}
+.askme-header
+{
+    padding-top: 20px;
+    font-size: 200%;
+}
+.askme-hot
+{
+    font-size: 150%;
+    padding-top: 10px;
+}
+.askme-btn
+{
+    background: cornflowerblue;
+}
+.askme-btn:hover
+{
+    background: lightskyblue;
+}
+
+.askme-navbar-search
+{
+	padding-right: 0px;
+}
+
+.askme-menu-bar
+{
+    padding-top: 5px;
+	padding-left: 100px;
+}
+.askme-menu-bar-tag
+{
+    text-align: left; color: white; font-size: 150%; 
+}
+.askme-menu-bar-memb1-tag
+{
+    font-size: 150%;
+    text-align: left;
+    color: white;
+}
+.askme-menu-bar-space1
+{
+    padding-bottom: 10px;
+}
+.askme-menu-bar-space2
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.askme-menu-bar-top-offset
+{
+	padding-bottom: 20px;
+}
+.askme-login-warning
+{
+    color: red;
+    font-size: 150%;
+}
+.askme-login-offset
+{
+    padding-bottom: 20px;
+}
+.askme-main-content-header
+{
+    margin-bottom: 20px;
+}
+.askme-main-content-settings-label
+{
+	color: white;
+}
+.askme-main-content-settings
+{
+    padding-top: 20px;
+	background: #353535;
+	margin-bottom: 20px;
+    width: 550px;
+}
+.askme-main-content-settings-offset-avatar
+{
+    padding-top: 120px;
+    padding-left: 20px;
+}
+.askme-main-content-settings-offset
+{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.askme-main-content-ask-title
+{
+    padding-left: 20px;
+    margin-bottom: 10px;
+    width: 350px;
+    height: 30px;
+}
+.askme-main-content-ask-text
+{
+    padding-bottom: 150px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    width: 350px;
+    height: 200px;
+}
+.askme-main-content-ask-label1
+{
+    color: white;
+    padding-bottom: 10px;
+}
+.askme-main-content-ask-label2
+{
+    color: white;
+    padding-bottom: 175px;
+}
+.askme-main-content-ask-label3
+{
+    color: white;
+    padding-bottom: 20px;
+}
+.askme-main-content-ask-button
+{
+    width: 350px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.askme-main-content-question-block
+{
+	padding-top: 20px;
+	background: #353535;
+	margin-bottom: 20px;
+    height: 330px;
+}
+.askme-pagination
+{
+	padding-top: 20px;
+	background: #353535;
+	padding-bottom: 20px;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    margin-right: 470px;
+    margin-left: 90px;
+}
+.askme-main-content-avatar
+{
+	margin-left: 15px;
+}
+.askme-main-content-username
+{
+	padding-top: 20px;
+    color: white;
+}
+.askme-main-content-question-block-input-group
+{
+	margin-top: 20px;
+}
+.askme-main-content-question-block-input
+{
+    width: 60px;
+    padding-left: 25px;
+}
+.askme-main-content-question-block-input-btn1
+{
+	width: 60px;
+}
+.askme-main-content-question-block-input-btn2
+{
+	width: 60px;
+}
+.askme-main-content-question-block-username
+{
+	color: white;
+}
+.askme-main-content-question-block-article
+{
+	color: white;
+}
+.askme-main-content-top-offset
+{
+	padding-bottom: 20px;
+}
+.askme-main-content-arcticle-title
+{
+	color: white;
+}
+.askme-login-content
+{
+    padding-top: 20px;
+	background: #353535;
+	padding-bottom: 10px;
+    width: 570px;
+}
+.askme-login-label1
+{
+    color: white;
+    padding-bottom: 5px;
+}
+.askme-login-label2
+{
+    color: white;
+}
+
+.askme-login-input
+{
+    padding-left: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.askme-registration
+{
+    padding-top: 20px;
+	background: #353535;
+	margin-bottom: 20px;
+    width: 550px;
+}
+.askme-registration-offset
+{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.askme-registration-label1
+{
+    font-size: 150%;
+    color: white;
+}
+.askme-registration-login
+{
+    width: 240px;
+}
+.askme-registration-btn
+{
+    margin-bottom: 10px;
+    margin-left: 190px;
+    width:240px;
+}
+
+.askme-answer-block
+{
+    padding-top: 10px;;
+    margin-top: 20px;
+    width: 640px;
+    background: #353535;
+    margin-left: 10px;
+    padding-bottom: 15px;
+}
+.askme-answer-input
+{
+    padding-bottom: 50px;
+    margin-top: 20px;
+    margin-left:10px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 640px;
+}
+.askme-answer-btn
+{
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+ul.hr 
+{
+	padding: 4px; /* Значение полей */
+}
+ul.hr li 
+{
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 5px;
+    color: white;
+}
+ul.askme-user-block li
+{
+    display: inline;
+}
+.bottom
+{
+	padding-left: 120px;
+	padding-bottom: 30px;
+}

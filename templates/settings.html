@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+    <div class="row">
+      <div class="col-lg-6">
+        <h1><u>Settings: Dr. House</u></h1>
+      </div>
+    </div>
+    <p class="askme-login-warning">Sorry, this login is already used!</p>
+{% endblock %}
+
+{% block left-content %}
+    <div class="container">
+      <div class="row askme-main-content-settings">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-lg-6">
+                  <label class="askme-main-content-settings-offset askme-main-content-settings-label">Login:</label>
+                  <p class="askme-main-content-settings-offset askme-main-content-settings-label">Email:</p>
+                  <p class="askme-main-content-settings-offset askme-main-content-settings-label">NickName:</p>
+                  <p class="askme-main-content-settings-offset-avatar askme-main-content-settings-label">Upload avatar:</p>
+                </div>
+                <div class="col-lg-6">
+                  <input class="askme-main-content-settings-offset" type="login" class="form-control" id="InputLogin" aria-describedby="emailHelp" placeholder="Enter login">
+                  <input class="askme-main-content-settings-offset" type="email" class="form-control" id="InputEmail" placeholder="Email">
+                  <input class="askme-main-content-settings-offset" type="nick" class="form-control" id="InputEmail" placeholder="NickName">
+                  <img class="askme-main-content-settings-offset" src="{% static "img/avatar.png" %}" width="150" height="100">
+                  <input class="askme-main-content-settings-offset" type="path" class="form-control" id="InputEmail" placeholder="Path">
+                  <button class="btn btn-info askme-btn askme-main-content-settings-offset" style="width: 225px">Choose</button>
+                  <button class="btn btn-info askme-btn askme-main-content-settings-offset" style="width: 225px; margin-bottom: 20px">Save</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
