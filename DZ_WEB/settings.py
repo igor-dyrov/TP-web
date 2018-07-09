@@ -25,7 +25,7 @@ SECRET_KEY = 'ewg_#v+6ftnj@#yg1^rwsw%z!t@_w+#-8dpfw=r^!q&7!s76is'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ask2.me', '127.0.0.1', 'testserver']
 
 
 # Application definition
@@ -121,7 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, "uploads")
+)
+MEDIA_URL = '/uploads/'
+
 #STATICFILES_DIRS = (BASE_DIR + '/static/',)

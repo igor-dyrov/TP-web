@@ -2,10 +2,14 @@
 {% for question in questions %}
     <div class="row askme-main-content-question-block" id = "{{ question.id }}">
       <div class="col-lg-4">
-        <img src="{% static "img/avatar.png" %}" width="150" height="100" class="askme-main-content-avatar">
+        <img {% if question.author.avatar %}
+        src="{{ question.author.avatar.url }}"
+        {% else %}
+        src="{% static 'img/user.png' %}" {% endif %}
+                width="150" height="100" class="askme-main-content-avatar" style="border-radius: 50%;">
 
         <p style="margin-right: 40px" align="center" class="askme-main-content-username">
-            <a class="font-weight-bold askme-main-content-question-block-username"href="#">{{ question.author }}</a></p>
+            <p class="font-weight-bold askme-main-content-question-block-username">{{ question.author }}</p></p>
 
         <div class="row input-group">
             <div class="col-lg-6"  style="margin-left: 65px">
@@ -25,12 +29,11 @@
             {{ question.text }}
         </p>
         <ul class="hr">
-          <li><a href={% url 'answer' question.id %}><u>answers ({{ question.num_of_ans }})</u></a> </li>
+          <li><a href={% url 'answer' question.id %}><u>answers ({{ question.answers_count }})</u></a> </li>
           <li class="font-weight-bold askme-main-content-arcticle-title">Tags: </li>
-          <li><a href="#">Chrome</a></li>
-          <li><a href="#">C++</a></li>
-          <li><a href="#">MySQL</a></li>
-          <li><a href="#">CLion</a></li>
+            {% for t in question.tags.all %}
+                <li><a href={% url 'tag' t %}>{{ t }}</a></li>
+            {% endfor %}
         </ul>
       </div>
 </div>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="askme-login-offset"><u>Profile</u></h1>
+    </div>
+  </div>
+{% endblock %}
+
+{% block left-content %}
+    <form method='post' enctype="multipart/form-data" action="{% url 'profile' %}">
+    {% csrf_token %}
+        <div class="container">
+          <div class="form-control">
+              <label for="avatar">Avatar</label>
+              <input type="file" class="form-control-file" name="avatar">
+          </div>
+            <button type="submit" class="btn btn-info askme-btn askme-login-input">Save</button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block bottom %}
+{% endblock %}

@@ -6,24 +6,28 @@
       <h1 class="askme-login-offset"><u>Log In</u></h1>
     </div>
   </div>
-  <p class="askme-login-warning">Sorry, wrong password!</p>
+  <p class="askme-login-warning"></p>
 {% endblock %}
 
 {% block left-content %}
-    <div class="container">
-      <div class="row askme-login-content">
-        <div class="col-lg-4">
-          <p class="askme-login-label1">Login: </p>
-          <p class="askme-login-label2">Password: </p>
+    <form method='post' action="{% url 'auth' %}">
+    {% csrf_token %}
+        <div class="container">
+          <div class="row askme-login-content">
+            <div class="col-lg-4">
+              <p class="askme-login-label1">{{ form.login.label }} </p>
+              <p class="askme-login-label2">{{ form.password.label }} </p>
+            </div>
+            <div class="col-lg-8">
+                  {{ form.login }}
+                  {{ form.password }}
+                  <div style="color: red">{{ form.login.errors }}</div>
+                  <button type="submit" class="btn btn-info askme-btn askme-login-input">Log in!</button>
+                  <a href='{% url 'registration' %}' class="btn btn-info askme-btn askme-login-input">Create new account</a>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-8">
-          <input class="askme-login-input" id="InputLogin" aria-describedby="emailHelp" placeholder="Enter Login">
-          <input class="askme-login-input" type="password" id="InputPassword" placeholder="Password">
-          <button class="btn btn-info askme-btn askme-login-input">Log in!</button>
-          <button class="btn btn-info askme-btn askme-login-input">Create new account</button>
-        </div>
-      </div>
-    </div>
+    </form>
 {% endblock %}
 
 {% block bottom %}

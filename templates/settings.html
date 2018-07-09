@@ -5,33 +5,37 @@
 {% block header %}
     <div class="row">
       <div class="col-lg-6">
-        <h1><u>Settings: Dr. House</u></h1>
+        <h1><u>Settings: {{ user }}</u></h1>
       </div>
     </div>
-    <p class="askme-login-warning">Sorry, this login is already used!</p>
+    <p class="askme-login-warning"></p>
 {% endblock %}
 
 {% block left-content %}
     <div class="container">
       <div class="row askme-main-content-settings">
         <div class="col-lg-8">
+            <form method='post'enctype="multipart/form-data" action='{% url 'change_profile'%}'>
+            {% csrf_token %}
+                <div class="row">
+                    <div style="color: red">{{ form.login.errors }}</div>
+                </div>
             <div class="row">
                 <div class="col-lg-6">
-                  <label class="askme-main-content-settings-offset askme-main-content-settings-label">Login:</label>
-                  <p class="askme-main-content-settings-offset askme-main-content-settings-label">Email:</p>
-                  <p class="askme-main-content-settings-offset askme-main-content-settings-label">NickName:</p>
-                  <p class="askme-main-content-settings-offset-avatar askme-main-content-settings-label">Upload avatar:</p>
+                  <label class="askme-main-content-settings-offset askme-main-content-settings-label">{{ form.login.label }}:</label>
+                  <p class="askme-main-content-settings-offset askme-main-content-settings-label">{{ form.email.label }}:</p>
+                  <p class="askme-main-content-settings-offset-avatar askme-main-content-settings-label">{{ image.avatar.label }}:</p>
                 </div>
                 <div class="col-lg-6">
-                  <input class="askme-main-content-settings-offset" type="login" class="form-control" id="InputLogin" aria-describedby="emailHelp" placeholder="Enter login">
-                  <input class="askme-main-content-settings-offset" type="email" class="form-control" id="InputEmail" placeholder="Email">
-                  <input class="askme-main-content-settings-offset" type="nick" class="form-control" id="InputEmail" placeholder="NickName">
-                  <img class="askme-main-content-settings-offset" src="{% static "img/avatar.png" %}" width="150" height="100">
-                  <input class="askme-main-content-settings-offset" type="path" class="form-control" id="InputEmail" placeholder="Path">
-                  <button class="btn btn-info askme-btn askme-main-content-settings-offset" style="width: 225px">Choose</button>
-                  <button class="btn btn-info askme-btn askme-main-content-settings-offset" style="width: 225px; margin-bottom: 20px">Save</button>
+                  {{ form.login }}
+                  {{ form.email }}
+                  <img class="askme-main-content-settings-offset" {% if user.profile.avatar %} src="{{ user.profile.avatar.url }}"
+                    {% else %} src="{% static 'img/user.png' %}" {% endif %} width="150" height="100">
+                    <div class="askme-main-content-settings-offset" style="color: white">{{ image.avatar }}</div>
+                  <button type="submit" class="btn btn-info askme-btn askme-main-content-settings-offset" style="width: 225px; margin-bottom: 20px">Save</button>
                 </div>
             </div>
+        </form>
         </div>
       </div>
     </div>

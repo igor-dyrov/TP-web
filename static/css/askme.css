@@ -96,7 +96,7 @@ body {
 }
 .askme-main-content-ask-text
 {
-    padding-bottom: 150px;
+    padding-bottom: 0px;
     padding-left: 20px;
     margin-bottom: 10px;
     width: 350px;
@@ -105,12 +105,12 @@ body {
 .askme-main-content-ask-label1
 {
     color: white;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 .askme-main-content-ask-label2
 {
     color: white;
-    padding-bottom: 175px;
+    padding-bottom: 165px;
 }
 .askme-main-content-ask-label3
 {
@@ -143,6 +143,7 @@ body {
 .askme-main-content-avatar
 {
 	margin-left: 15px;
+    border-radius: 50%;
 }
 .askme-main-content-username
 {
@@ -168,6 +169,7 @@ body {
 }
 .askme-main-content-question-block-username
 {
+    padding-left: 60px;
 	color: white;
 }
 .askme-main-content-question-block-article
@@ -211,7 +213,7 @@ body {
     padding-top: 20px;
 	background: #353535;
 	margin-bottom: 20px;
-    width: 550px;
+    width: 450px;
 }
 .askme-registration-offset
 {
@@ -230,7 +232,7 @@ body {
 .askme-registration-btn
 {
     margin-bottom: 10px;
-    margin-left: 190px;
+    margin-left: 15px;
     width:240px;
 }
 

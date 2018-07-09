@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../static/img/logo.png">
+    <link rel="icon" href={% static "img/logo.png"%}>
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
     <title>AskMe</title>
 
@@ -29,11 +29,16 @@
               <a class="btn btn-info askme-btn" href={% url 'ask' %}>Ask!</a>
           </li>
         </ul>
-        <form class="form-inline askme-navbar-search">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-info  askme-btn my-2 my-sm-0" type="submit">Search</button>
+        <form method='post' action="{% url 'search' %}" class="form-inline askme-navbar-search">
+            {% csrf_token %}
+          <input class="form-group mr-sm-2" name="tag" type="text" placeholder="Search" aria-label="Search">
+          <button style="margin-right: 5px;" class="btn btn-info  askme-btn my-2 my-sm-0" type="submit">Search</button>
         </form>
-        {% include 'not-auth-header.html' %}
+          {% if user.is_authenticated %}
+            {% include 'auth-header.html' %}
+          {% else %}
+            {% include 'not-auth-header.html' %}
+          {% endif %}
         </div>
       </div>
     </nav>
@@ -48,7 +53,25 @@
             {% block left-content %}
             {% endblock %}
         </div>
-          {% include 'right-content.html' %}
+          <div class="col-lg-4 askme-menu-bar">
+        <h1 class="askme-menu-bar-top-offset"><u>Tags</u></h1>
+        <table class="table table-striped table-dark">
+        <th scope="col">
+        {%for t in tags %}
+            <p><a href={% url 'tag' t %}><span class="askme-menu-bar-tag">{{ t }}</span></a></p>
+        {% endfor %}
+        </th>
+        </table>
+        <h1 class="askme-menu-bar-space2"><u>Best Members</u></h1>
+        <table class="table table-striped table-dark">
+        <th scope="col">
+        {% for u in users %}
+            <p><span class="askme-menu-bar-memb1-tag">{{ u }}</span></p>
+            <p class="askme-menu-bar-space1"></p>
+        {% endfor %}
+        </th>
+        </table>
+</div>
       </div>
     </main>
     {% block bottom %}

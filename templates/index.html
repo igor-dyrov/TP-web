@@ -10,7 +10,7 @@
 
     {% block bottom %}
         <div class="container-fluid ">
-            <div class="row askme-pagination" style="">
+            <div class="row askme-pagination">
                 <div class="col-lg-1">
                 <a class="btn btn-info askme-btn"{% if questions.has_previous %} href="?page={{ questions.previous_page_number }}" {% else %} disabled {% endif %}>◄</a>
                 </div>

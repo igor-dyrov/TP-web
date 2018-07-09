@@ -9,23 +9,29 @@
 {% endblock %}
 
 {% block left-content %}
-    <div class="row askme-main-content-settings">
-        <div class="col-lg-8">
-            <div class="row">
-                <div class="col-lg-4">
-                  <p class="askme-main-content-settings-offset askme-main-content-ask-label1">Title:</p>
-                  <p class="askme-main-content-settings-offset askme-main-content-ask-label2">Text:</p>
-                  <p class="askme-main-content-settings-offset askme-main-content-ask-label3">Tags:</p>
-                </div>
-                <div class="col-lg-8">
-                  <input class="askme-main-content-ask-title askme-main-content-settings-offset" placeholder="Question`s title" type="title" class="form-control" id="Title" aria-describedby="emailHelp">
-                  <input class="askme-main-content-ask-text askme-main-content-settings-offset" placeholder="Type here" type="text" class="form-control" id="Text" aria-describedby="emailHelp">
-                  <input class="askme-main-content-ask-title askme-main-content-settings-offset" placeholder="Type your question`s tags splited by ," type="title" class="form-control" id="Tags" aria-describedby="emailHelp">
-                  <button class="btn btn-info askme-btn askme-main-content-ask-button">Ask!</button>
+    <form method='post' action='{% url 'question_save' %}' >
+    {% csrf_token %}
+        <div class="row askme-main-content-settings">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-4">
+                      <p class="askme-main-content-settings-offset
+                       askme-main-content-ask-label1">{{ form.title.label }}</p>
+                      <p class="askme-main-content-settings-offset
+                       askme-main-content-ask-label2">{{ form.text.label }}</p>
+                      <p class="askme-main-content-settings-offset
+                       askme-main-content-ask-label3">{{ form.tags.label }}</p>
+                    </div>
+                    <div class="col-lg-8">
+                        {{ form.title }}
+                        {{ form.text }}
+                        {{ form.tags }}
+                      <button type="submit" class="btn btn-info askme-btn askme-main-content-ask-button">Ask!</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 {% endblock %}
 
 {% block bottom %}

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from questions.models import Profile, Question, Answer, Tag
+from questions.models import *
 
 # Register your models here.
 
@@ -18,4 +18,8 @@ class AnswerAdmin(admin.ModelAdmin):
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Like)
+class LikeAdmin(admin.ModelAdmin):
     pass
